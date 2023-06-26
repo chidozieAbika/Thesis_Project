@@ -1,0 +1,37 @@
+﻿@model List<Motte_IT.Models.clientuser>
+@{
+    ViewData["Title"] = "Users";
+    Layout = "~/Views/Shared/_LayAdmin.cshtml";
+}
+
+
+<h1 class="display-4">Client users</h1>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ClientID</th>
+            <th>User name</th>
+            <th>Password</th>
+            <th>Email</th>
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ClientID</td>
+                <td>@item.UserName</td>
+                <td>@item.PasswordHash</td>
+                <td>@item.Email</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>

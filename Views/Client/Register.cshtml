@@ -1,0 +1,28 @@
+﻿@model clientuser
+
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_LayLogin.cshtml";
+}
+
+
+<h1>Register Your Account</h1>
+
+ @using(Html.BeginForm("Register", "Client"))
+ {
+   
+    <div>
+        @Html.LabelFor(m => m.UserName)
+        @Html.EditorFor(m => m.UserName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.PasswordHash)
+        @Html.EditorFor(m => m.PasswordHash)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Email)
+        @Html.EditorFor(m => m.Email)
+    </div>
+    <input type="submit" class="btn btn-success" value="Register Account " asp-controller="Client" asp-action="Register" />
+}

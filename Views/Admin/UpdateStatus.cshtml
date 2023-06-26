@@ -1,0 +1,21 @@
+﻿@model ClientComplaint
+@{
+    ViewData["Title"] = "UpdateStatus";
+    Layout = "~/Views/Shared/_LayAdmin.cshtml";
+}
+
+<h1>UpdateStatus</h1>
+
+@using (Html.BeginForm("UpdateStatus2", "Admin"))
+{
+
+    <div>
+        @Html.LabelFor(m => m.ComplaintID)
+        @Html.EditorFor(m => m.ComplaintID)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Status)
+        @Html.EditorFor(m => m.Status)
+    </div>
+    <input type="submit" class="btn btn-success" value="Apply update" />
+}

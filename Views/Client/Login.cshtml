@@ -1,0 +1,29 @@
+﻿@model clientuser
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LayLogin.cshtml";
+}
+
+<h1>Login</h1>
+
+
+
+
+@ViewBag.error
+@using (Html.BeginForm("Login2", "Client"))
+{
+
+    <div>
+        @Html.LabelFor(m => m.UserName)
+        @Html.EditorFor(m => m.UserName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.PasswordHash)
+        @Html.EditorFor(m => m.PasswordHash)
+    </div>
+    <input type="submit" class="btn btn-success" value="Login" />
+}
+
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Register"> Register user Account</a>
+

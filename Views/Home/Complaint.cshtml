@@ -1,0 +1,43 @@
+﻿@model ClientComplaint
+@{
+    ViewData["Title"] = "Complaint";
+}
+
+<h1> Add your complaint</h1>
+
+<p></p>
+<div>
+    <select class="form-control" id="StudentGender" name="StudentGender" style=" width: 50% ">
+        <option>Select Category</option>
+        <option>Keyboard</option>
+        <option>Mouse</option>
+        <option>Software programm</option>
+        <option>Screen</option>
+
+
+
+    </select>
+</div>
+
+<p></p>
+
+@using (Html.BeginForm())
+{
+
+    <div>
+        @Html.LabelFor(m => m.CategorySubject)
+        @Html.EditorFor(m => m.CategorySubject)
+    </div>
+
+
+    <div>
+        @Html.LabelFor(m => m.ComputerNumber)
+        @Html.EditorFor(m => m.ComputerNumber)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Description)
+        @Html.EditorFor(m => m.Description)
+    </div>
+    <input type="submit" class="btn btn-success" />
+}

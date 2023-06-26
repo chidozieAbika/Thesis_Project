@@ -1,0 +1,50 @@
+﻿@model Motte_IT.Models.clientuser
+   
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+@{
+    var client = ViewData.Model;
+}
+
+
+@using Microsoft.AspNetCore.Http;
+
+<h1>Profile</h1>
+
+<table class="table">
+    <tr>
+
+        <th>
+            Email
+        </th>
+        <th>
+            User name
+        </th>
+        <th>
+            Password
+        </th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+
+        <td>
+            @client.Email
+        </td>
+        <td>
+            @client.UserName
+        </td>
+        <td>
+            @client.PasswordHash
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit") |
+
+        </td>
+    </tr>
+
+</table>

@@ -1,0 +1,61 @@
+﻿@model List<Motte_IT.Models.ClientComplaint>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using Microsoft.AspNetCore.Http;
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+</div>
+
+<h2>Welcome @Context.Session.GetString("username")</h2>
+
+<h1 class="display-4">Your Complaints</h1>
+
+
+<table class="table table-bordered table-striped " style=" width: 75% ">
+    <thead>
+        <tr>
+            <th>
+                Complaint Case ID
+            </th>
+            <th>
+                Computer Number
+            </th>
+           
+            <th>
+                Subject
+            </th>
+            <th>
+                Description
+            </th>
+
+            <th>
+                Status
+            </th>
+            <th>
+               Start Date
+            </th>
+            <th>
+                Finished Date
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td width="50%">@item.ComplaintID</td>
+            <td width="50%">@item.ComputerNumber</td>
+            <td width="50%">@item.CategorySubject</td>
+            <td width="50%">@item.Description</td>
+            <td width="50%">@item.Status</td>
+            <td width="50%">@item.StartDate</td>
+            <td width="50%">@item.FinishedDate</td>
+        </tr>
+        }
+    </tbody>
+</table>

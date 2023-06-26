@@ -1,0 +1,34 @@
+﻿@model clientuser
+
+@{
+    ViewData["Title"] = "edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Profile</h1>
+
+
+
+@using (Html.BeginForm("editName", "Home"))
+{
+
+    <div>
+        @Html.LabelFor(m => m.UserName)
+        @Html.EditorFor(m => m.UserName)
+    </div>
+   
+
+    <input type="submit" class="btn btn-success" value="Apply the edit" />
+}
+@using (Html.BeginForm("editPassword", "Home"))
+{
+
+   
+    <div>
+        @Html.LabelFor(m => m.PasswordHash)
+        @Html.EditorFor(m => m.PasswordHash)
+    </div>
+   
+
+    <input type="submit" class="btn btn-success" value=" Edit password" />
+}

@@ -1,0 +1,23 @@
+﻿@model UserAdmin
+
+@{
+    ViewData["Title"] = "AdminLogin";
+    Layout = "~/Views/Shared/_LayLogin.cshtml";
+}
+
+<h1>Admin Login</h1>
+
+@ViewBag.error
+@using (Html.BeginForm("AdminLogin2", "Admin"))
+{
+
+    <div>
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Password)
+        @Html.EditorFor(m => m.Password)
+    </div>
+    <input type="submit" class="btn btn-success" value="Login" />
+}
